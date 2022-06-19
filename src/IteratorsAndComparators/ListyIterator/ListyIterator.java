@@ -3,8 +3,10 @@ package IteratorsAndComparators.ListyIterator;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
-public class ListyIterator implements Iterator<String> {
+public class ListyIterator implements Iterable<String> {
     private List<String> collection;
     private int index = 0;
 
@@ -12,14 +14,8 @@ public class ListyIterator implements Iterator<String> {
         this.collection = new ArrayList<>();
     }
 
-    @Override
     public boolean hasNext() {
         return this.index + 1 < collection.size();
-    }
-
-    @Override
-    public String next() {
-        return collection.get(index++);
     }
 
     public boolean move() {
@@ -41,5 +37,25 @@ public class ListyIterator implements Iterator<String> {
 
     public void create(String... strings) {
         this.collection = List.of(strings);
+    }
+
+    @Override
+    public Iterator<String> iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer<? super String> action) {
+        Iterable.super.forEach(action);
+    }
+
+    @Override
+    public Spliterator<String> spliterator() {
+        return Iterable.super.spliterator();
+    }
+
+    public void printAll() {
+        collection.forEach(e -> System.out.print(e + " "));
+        System.out.println();
     }
 }
