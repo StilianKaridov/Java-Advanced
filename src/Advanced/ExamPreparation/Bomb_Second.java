@@ -1,4 +1,4 @@
-package Advanced.ExamPreparation;
+package advanced.examPreparation;
 
 import java.util.Scanner;
 

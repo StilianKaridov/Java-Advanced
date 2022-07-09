@@ -1,1 +1,1 @@
-# All exercises from Java Advanced course from SoftUni
+# All exercises from Java advanced course from SoftUni
