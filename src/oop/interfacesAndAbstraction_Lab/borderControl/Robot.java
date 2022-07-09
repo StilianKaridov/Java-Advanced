@@ -1,4 +1,4 @@
-package oop.interfacesAndAbstraction.borderControl;
+package oop.interfacesAndAbstraction_Lab.borderControl;
 
 public class Robot implements Identifiable {
 

@@ -1,4 +1,4 @@
-package oop.interfacesAndAbstraction.carShop;
+package oop.interfacesAndAbstraction_Lab.carShop;
 
 public class CarImpl implements Car {
 

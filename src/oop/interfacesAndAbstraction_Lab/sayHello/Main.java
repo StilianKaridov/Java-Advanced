@@ -1,4 +1,4 @@
-package oop.interfacesAndAbstraction.sayHello;
+package oop.interfacesAndAbstraction_Lab.sayHello;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,10 @@
-package oop.interfacesAndAbstraction.sayHello;
+package oop.interfacesAndAbstraction_Lab.sayHello;
 
-public class Bulgarian extends BasePerson {
+public class Chinese extends BasePerson {
 
     private String name;
 
-    public Bulgarian(String name) {
+    public Chinese(String name) {
         super(name);
     }
 
@@ -15,6 +15,6 @@ public class Bulgarian extends BasePerson {
 
     @Override
     public String sayHello() {
-        return "Здравей";
+        return "Djydjybydjy";
     }
 }

@@ -1,4 +1,4 @@
-package oop.interfacesAndAbstraction.ferrari;
+package oop.interfacesAndAbstraction_Lab.ferrari;
 
 public interface Car {
 

@@ -1,4 +1,4 @@
-package oop.interfacesAndAbstraction.sayHello;
+package oop.interfacesAndAbstraction_Lab.sayHello;
 
 public class BasePerson implements Person{
 
