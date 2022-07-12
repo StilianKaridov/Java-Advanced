@@ -1,4 +1,4 @@
-package oop.polymorphism.animals;
+package oop.polymorphism_Lab.animals;
 
 public class Main {
     public static void main(String[] args) {

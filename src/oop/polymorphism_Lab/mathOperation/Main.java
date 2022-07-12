@@ -1,4 +1,4 @@
-package oop.polymorphism.mathOperation;
+package oop.polymorphism_Lab.mathOperation;
 
 public class Main {
     public static void main(String[] args) {

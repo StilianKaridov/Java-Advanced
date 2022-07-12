@@ -1,4 +1,4 @@
-package oop.polymorphism.shapes;
+package oop.polymorphism_Lab.shapes;
 
 public abstract class Shape {
 
