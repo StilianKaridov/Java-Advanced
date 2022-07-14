@@ -1,58 +1,86 @@
 package oop.polymorphism.vehicles;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String[] carInfo = scanner.nextLine().split("\\s+");
-        Car car = new Car(Double.parseDouble(carInfo[1]), Double.parseDouble(carInfo[2]), Double.parseDouble(carInfo[3]));
+        String[] tokens = scanner.nextLine().split(" ");
+        Vehicle car = getVehicle(tokens);
 
-        String[] truckInfo = scanner.nextLine().split("\\s+");
-        Truck truck = new Truck(Double.parseDouble(truckInfo[1]), Double.parseDouble(truckInfo[2]), Double.parseDouble(truckInfo[3]));
+        tokens = scanner.nextLine().split(" ");
+        Vehicle truck = getVehicle(tokens);
 
-        String[] busInfo = scanner.nextLine().split("\\s+");
-        Bus bus = new Bus(Double.parseDouble(busInfo[1]), Double.parseDouble(busInfo[2]), Double.parseDouble(busInfo[3]));
+        tokens = scanner.nextLine().split(" ");
+        Vehicle bus = getVehicle(tokens);
 
 
-        int numberOfCommands = Integer.parseInt(scanner.nextLine());
+        Map<String, Vehicle> vehicles = new LinkedHashMap<>();
+        vehicles.put("Car", car);
+        vehicles.put("Truck", truck);
+        vehicles.put("Bus", bus);
 
-        while (numberOfCommands-- > 0) {
-            String[] command = scanner.nextLine().split("\\s+");
+        int n = Integer.parseInt(scanner.nextLine());
 
-            switch (command[0]) {
-                case "Drive":
-                    if (command[1].equals("Car")) {
-                        System.out.println(car.drive(Double.parseDouble(command[2])));
-                    } else if (command[1].equals("Truck")) {
-                        System.out.println(truck.drive(Double.parseDouble(command[2])));
-                    } else {
-                        System.out.println(bus.drive(Double.parseDouble(command[2])));
-                    }
-                    break;
-                case "DriveEmpty":
-                    System.out.println(bus.driveWithoutPeople(Double.parseDouble(command[2])));
-                    break;
-                case "Refuel":
-                    try {
-                        if (command[1].equals("Car")) {
-                            car.refuel(Double.parseDouble(command[2]));
-                        } else if (command[1].equals("Truck")) {
-                            truck.refuel(Double.parseDouble(command[2]));
-                        } else {
-                            bus.refuel(Double.parseDouble(command[2]));
+        for (int i = 0; i < n; i++) {
+
+            tokens = scanner.nextLine().split(" ");
+            String commandName = tokens[0];
+            String vehicleType = tokens[1];
+            Vehicle vehicle = vehicles.get(vehicleType);
+
+            try {
+
+                switch (commandName) {
+                    case "Drive":
+                        double distance = Double.parseDouble(tokens[2]);
+                        if (vehicle instanceof Bus) {
+                            ((Bus) vehicle).setEmpty(false);
                         }
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
-
+                        System.out.println(vehicle.drive(distance));
+                        break;
+                    case "Refuel":
+                        double liters = Double.parseDouble(tokens[2]);
+                        vehicles.get(vehicleType).refuel(liters);
+                        break;
+                    case "DriveEmpty":
+                        double driveEmptyBusDistance = Double.parseDouble(tokens[2]);
+                        if (vehicle instanceof Bus) {
+                            ((Bus) vehicle).setEmpty(true);
+                        }
+                        System.out.println(vehicle.drive(driveEmptyBusDistance));
+                        break;
+                    default:
+                        throw new IllegalArgumentException("No such command");
+                }
+            } catch (IllegalArgumentException exception) {
+                System.out.println(exception.getMessage());
             }
         }
+        vehicles.values().forEach(System.out::println);
+    }
 
-        System.out.printf("Car: %.2f%n", car.getFuelQuantity());
-        System.out.printf("Truck: %.2f%n", truck.getFuelQuantity());
-        System.out.printf("Bus: %.2f", bus.getFuelQuantity());
+    private static Vehicle getVehicle(String[] tokens) {
+        String vehicleType = tokens[0];
+        double fuelAmount = Double.parseDouble(tokens[1]);
+        double consumption = Double.parseDouble(tokens[2]);
+        double tankCapacity = Double.parseDouble(tokens[3]);
+
+        Vehicle vehicle = null;
+        switch (vehicleType) {
+            case "Car":
+                vehicle = new Car(fuelAmount, consumption, tankCapacity);
+                break;
+            case "Bus":
+                vehicle = new Bus(fuelAmount, consumption, tankCapacity);
+                break;
+            case "Truck":
+                vehicle = new Truck(fuelAmount, consumption, tankCapacity);
+                break;
+        }
+        return vehicle;
     }
 }

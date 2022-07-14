@@ -1,14 +1,14 @@
 package oop.polymorphism.vehicles;
 
-public class Car extends Vehicle {
+public class Car extends VehicleImpl {
+    private static final double AC_ADDITIONAL_CONSUMPTION = 0.9;
 
     public Car(double fuelQuantity, double fuelConsumption, double tankCapacity) {
-        super(fuelQuantity, tankCapacity);
-        setFuelConsumption(0.9 + fuelConsumption);
+        super(fuelQuantity, fuelConsumption, tankCapacity);
     }
 
     @Override
-    String printRemainingFuel() {
-        return String.format("Car: %.2f", getFuelQuantity());
+    public void setFuelConsumption(double fuelConsumption) {
+        super.setFuelConsumption(fuelConsumption + AC_ADDITIONAL_CONSUMPTION);
     }
 }

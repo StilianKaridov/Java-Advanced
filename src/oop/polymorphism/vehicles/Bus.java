@@ -1,39 +1,22 @@
 package oop.polymorphism.vehicles;
 
-import java.text.DecimalFormat;
-
-public class Bus extends Vehicle {
+public class Bus extends VehicleImpl {
+    private static final double AC_ADDITIONAL_CONSUMPTION = 1.4;
+    private boolean isEmpty;
 
     public Bus(double fuelQuantity, double fuelConsumption, double tankCapacity) {
-        super(fuelQuantity, tankCapacity);
-        setFuelConsumption(fuelConsumption);
+        super(fuelQuantity, fuelConsumption, tankCapacity);
+        isEmpty = false;
     }
 
     @Override
-    public String driveWithoutPeople(double km) {
-        DecimalFormat df = new DecimalFormat("0.##");
-
-        if (fuelQuantity >= getFuelConsumption() * km) {
-            fuelQuantity -= getFuelConsumption() * km;
-            return String.format("Bus travelled %s km", df.format(km));
+    public void setFuelConsumption(double fuelConsumption) {
+        if (!this.isEmpty) {
+            super.setFuelConsumption(fuelConsumption + AC_ADDITIONAL_CONSUMPTION);
         }
-        return "Bus needs refueling";
     }
 
-    @Override
-    public String drive(double km) {
-        DecimalFormat df = new DecimalFormat("0.##");
-        setFuelConsumption(getFuelConsumption() + 1.4);
-
-        if (fuelQuantity >= getFuelConsumption() * km) {
-            fuelQuantity -= getFuelConsumption() * km;
-            return String.format("Bus travelled %s km", df.format(km));
-        }
-        return "Bus needs refueling";
-    }
-
-    @Override
-    String printRemainingFuel() {
-        return String.format("Bus: %.2f", getFuelQuantity());
+    public void setEmpty(boolean empty) {
+        isEmpty = empty;
     }
 }
