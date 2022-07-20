@@ -1,4 +1,4 @@
-package oop.reflectionAndAnnotation;
+package oop.reflectionAndAnnotation_Lab;
 
 import java.util.Arrays;
 
