@@ -1,11 +1,10 @@
-package barracksWars;
+package oop.reflectionAndAnnotation.barracksWars;
 
-import barracksWars.interfaces.Repository;
-import barracksWars.interfaces.Runnable;
-import barracksWars.interfaces.UnitFactory;
-import barracksWars.core.Engine;
-import barracksWars.core.factories.UnitFactoryImpl;
-import barracksWars.data.UnitRepository;
+import oop.reflectionAndAnnotation.barracksWars.core.Engine;
+import oop.reflectionAndAnnotation.barracksWars.core.factories.UnitFactoryImpl;
+import oop.reflectionAndAnnotation.barracksWars.data.UnitRepository;
+import oop.reflectionAndAnnotation.barracksWars.interfaces.Repository;
+import oop.reflectionAndAnnotation.barracksWars.interfaces.UnitFactory;
 
 public class Main {
 
