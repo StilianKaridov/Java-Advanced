@@ -1,4 +1,4 @@
-package blackBoxInteger;
+package oop.reflectionAndAnnotation.blackBoxInteger;
 
 public class BlackBoxInt {
 
