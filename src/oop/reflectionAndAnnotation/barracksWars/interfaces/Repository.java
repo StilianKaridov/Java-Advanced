@@ -8,5 +8,5 @@ public interface Repository {
 
 	String getStatistics();
 
-	void removeUnit(String unitType) throws ExecutionControl.NotImplementedException, ClassNotFoundException;
+	String retire(String unitType) throws ExecutionControl.NotImplementedException, ClassNotFoundException;
 }

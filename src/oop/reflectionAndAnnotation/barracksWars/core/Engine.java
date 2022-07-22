@@ -1,9 +1,9 @@
 package oop.reflectionAndAnnotation.barracksWars.core;
 
-import jdk.jshell.spi.ExecutionControl;
 import oop.reflectionAndAnnotation.barracksWars.interfaces.Repository;
 import oop.reflectionAndAnnotation.barracksWars.interfaces.Unit;
 import oop.reflectionAndAnnotation.barracksWars.interfaces.UnitFactory;
+import jdk.jshell.spi.ExecutionControl;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -59,11 +59,21 @@ public class Engine implements Runnable {
             case "fight":
                 result = this.fightCommand(data);
                 break;
+            case "retire":
+                result = this.retireCommand(data);
+                break;
             default:
                 throw new RuntimeException("Invalid command!");
         }
         return result;
     }
+
+    private String retireCommand(String[] data) throws ExecutionControl.NotImplementedException, ClassNotFoundException {
+        String type = data[1];
+
+        return this.repository.retire(type);
+    }
+
 
     private String reportCommand(String[] data) {
         return this.repository.getStatistics();

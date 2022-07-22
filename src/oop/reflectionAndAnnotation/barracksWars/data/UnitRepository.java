@@ -37,13 +37,13 @@ public class UnitRepository implements Repository {
         return statBuilder.toString();
     }
 
-    public void removeUnit(String unitType) {
+    public String retire(String unitType) {
         // TODO: implement for problem 4
         if (!amountOfUnits.containsKey(unitType) || amountOfUnits.get(unitType) == 0) {
             throw new IllegalArgumentException("No such units in repository.");
         }
 
         this.amountOfUnits.put(unitType, amountOfUnits.get(unitType) - 1);
-        System.out.println(unitType + " retired!");
+        return unitType + " retired!";
     }
 }
