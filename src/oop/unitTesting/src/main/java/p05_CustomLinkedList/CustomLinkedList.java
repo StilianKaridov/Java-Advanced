@@ -1,4 +1,4 @@
-package p05_CustomLinkedList;
+package oop.unitTesting.src.main.java.p05_CustomLinkedList;
 
 /**
  * Dynamic (linked) list class definition

@@ -1,4 +1,4 @@
-package p04_BubbleSortTest;
+package oop.unitTesting.src.main.java.p04_BubbleSortTest;
 
 public class Bubble {
 

@@ -1,5 +1,6 @@
-package p01_Database;
+package oop.unitTesting.src.test.java.p01_Database;
 
+import oop.unitTesting.src.main.java.p01_Database.Database;
 import org.junit.Before;
 import org.junit.Test;
 

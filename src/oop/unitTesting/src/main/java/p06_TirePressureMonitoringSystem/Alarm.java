@@ -1,4 +1,4 @@
-package p06_TirePressureMonitoringSystem;
+package oop.unitTesting.src.main.java.p06_TirePressureMonitoringSystem;
 
 public class Alarm {
     private static final double LOW_PRESSURE_THRESHOLD = 17;

@@ -1,4 +1,4 @@
-package p02_ExtendedDatabase;
+package oop.unitTesting.src.main.java.p02_ExtendedDatabase;
 
 public class Person {
 

@@ -1,4 +1,4 @@
-package p01_Database;
+package oop.unitTesting.src.main.java.p01_Database;
 
 import javax.naming.OperationNotSupportedException;
 

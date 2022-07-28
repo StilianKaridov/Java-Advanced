@@ -1,4 +1,4 @@
-package p03_IteratorTest;
+package oop.unitTesting.src.main.java.p03_IteratorTest;
 
 import javax.naming.OperationNotSupportedException;
 import java.util.Arrays;
