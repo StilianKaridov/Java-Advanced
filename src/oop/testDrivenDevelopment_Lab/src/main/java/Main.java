@@ -1,0 +1,7 @@
+package oop.testDrivenDevelopment_Lab.src.main.java;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
