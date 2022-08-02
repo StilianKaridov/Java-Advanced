@@ -1,5 +1,9 @@
 package oop.testDrivenDevelopment.src.test.java;
 
+import oop.testDrivenDevelopment.src.main.java.ChainblockImpl;
+import oop.testDrivenDevelopment.src.main.java.Transaction;
+import oop.testDrivenDevelopment.src.main.java.TransactionImpl;
+import oop.testDrivenDevelopment.src.main.java.TransactionStatus;
 import org.junit.Before;
 import org.junit.Test;
 
